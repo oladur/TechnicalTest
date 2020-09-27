@@ -1,0 +1,15 @@
+import os
+import time
+from selenium import webdriver
+from selenium.webdriver.support.ui import Select
+
+driver = webdriver.Chrome()
+driver.get('https://serene-mountain-14043.herokuapp.com/')
+
+postCode = driver.find_element_by_xpath('//*[@id="searchLocation"]/input')
+postCode.send_keys('E5 9SJ')
+
+searchPostcode = driver.find_element_by_css_selector('#searchLocation > button').submit()
+searchPostcode.send_keys (Keys.ARROW_DOWN)
+searchPostcode.send_keys (Keys.RETURN)
+
